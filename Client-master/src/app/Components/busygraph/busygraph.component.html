@@ -1,0 +1,27 @@
+<div style="display: block">
+
+
+
+
+
+    <canvas baseChart
+    [datasets]="searchChartData"
+    [labels]="searchChartLabels"
+    [options]="searchChartOptions"
+    [legend]="searchChartLegend"
+    [colors]="searchChartColor"
+    [chartType]="searchChartType"
+    (chartClick)="chartClicked($event)"></canvas>
+             
+
+</div>
+<!-- <div style="display: block">
+    <canvas baseChart
+                [data]="searchChartData"
+                [labels]="searchChartLabels"
+                [chartType]="searchChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+              </canvas>
+             (chartHover)="chartHovered($event)"
+  </div> -->

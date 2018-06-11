@@ -1,0 +1,48 @@
+mat-icon {
+  color: #888888;
+  
+}
+
+input {
+  color: #888888;
+}
+
+button {
+  background-color: #21BCE4;
+  width: 200px;
+  color: white;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+}
+
+a {
+  color: #21BCE4;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  text-decoration: none;
+}
+
+h2 {
+  color: #888888;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  font-weight: 400;
+  border-bottom: #888888 1px solid;
+  padding-bottom: 25px;
+  
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 500px;
+}
+
+.cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}

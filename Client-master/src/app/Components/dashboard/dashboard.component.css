@@ -1,0 +1,175 @@
+.dash-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  margin-top: 30px;
+  width: 100%;
+  background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+}
+
+.dash-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.white-font {
+  color: white;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+}
+
+.demo-tab-group {
+  border: 1px solid #e8e8e8;
+}
+
+.pic {
+  box-shadow: 1px 3px 3px rgba(100, 100, 100, 1)
+}
+
+.delete mat-icon{
+ color: red;
+}
+
+.demo-tab-content {
+  padding: 10px;
+}
+
+.my-flex {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+}
+
+.flex-gym {
+  padding: 10px;
+}
+
+
+.spacer {
+  margin-top: 70px;
+  height: 70px;
+  width: 100%;
+}
+
+.map {
+  width: 30vw;
+  height: 100%;
+  
+}
+
+.container-gyms {
+  display: flex;
+  justify-content: space-around;
+  height: 55vh;
+}
+
+.search-contain {
+  width: 30vw;
+  height: 100%
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    border-bottom: 1px solid #888888;
+    /* padding-left: 10px;
+    position: fixed;
+    z-index: 1;
+    background-color: white; */
+}
+
+input {
+  width:300px;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #888888;
+  margin: 0 20px 0 0;
+  padding: 0;
+  
+  
+}
+
+.address-width {
+  width: 140px;
+}
+
+.dvsn {
+  display: flex;
+  justify-content: space-around;
+  height: 80vh;
+  position: fixed;
+}
+
+.info-contain {
+  width: 30vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 80%;
+}
+
+.single-gym {
+  padding: 10px;
+  width: 50vw;
+  line-height: 1px;
+  border-bottom: 1px solid #888888;
+}
+
+.gym-contain {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.new-gyms {
+  padding: 10px;
+  width: 100%;
+}
+
+.new-gyms h2 {
+  text-align: center;
+  color: #888888;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.new-gyms h4 {
+  text-align: center;
+  color: #888888;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif;
+  margin: 10px auto;
+  width: 100%;
+  
+}
+
+.add-gym {
+  width: 30vw;
+}
+
+h3 {
+  color: #888888;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif;
+}
+
+.spinner {
+  width: 100%;
+  height: 50vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner::ng-deep circle {
+  stroke: #00E640;
+}

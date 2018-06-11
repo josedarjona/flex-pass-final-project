@@ -1,0 +1,121 @@
+.spacer {
+  margin-top: 70px;
+  height: 70px;
+  width: 100%;
+}
+
+.map {
+  width: 50vw;
+  position: absolute;
+  margin-left: 50vw;
+}
+
+.search {
+  margin-top: 70px;
+    display: flex;
+    justify-items: end;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #888888;
+    padding-left: 10px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+}
+
+.graph-size {
+  width: 300px;
+}
+
+.graph-right {
+  float: right;
+}
+
+input {
+  width:300px;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #888888;
+  margin-left: 20px;
+  width: 90px;
+  margin-bottom: 10px;
+  
+}
+
+.dvsn {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  position: fixed;
+}
+
+.info-contain {
+  width: 50vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+
+}
+
+.single-gym {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 50vw;
+  border-bottom: 1px solid #888888;
+  height: 100%;
+}
+
+.gym-contain {
+  display: flex;
+  flex-direction: column;
+}
+
+h4{
+  line-height: 15px;
+}
+
+p{
+  line-height: 20px;
+}
+
+.left-side-card {
+height: 100%;
+width: 25vw;
+}
+
+.right-side-card {
+  height: 100%;
+  width: 25vw;
+  display: flex;
+  
+}
+
+.busy {
+  text-align: center;
+  line-height: 1px;
+  
+}
+
+.spinner {
+  width: 100%;
+  height: 50vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner::ng-deep circle {
+  stroke: #00E640;
+}
+
+
+/* ************************** STAR RATING *********************************/
+  
+
+/* ************************** END STAR RATING *********************************/

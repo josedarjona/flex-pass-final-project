@@ -1,0 +1,39 @@
+<app-main-nav>
+
+  <div class="cover">
+    <div class="login">
+      
+      <h2>Welcome Back!</h2>
+      
+      <br>
+      <hr>
+      
+      <form>
+        
+        <mat-form-field>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <input matInput mat-icon placeholder="USERNAME" type="text" [(ngModel)]="username" name="username">
+        </mat-form-field>
+        
+        <br>
+        
+        <mat-form-field>
+          <mat-icon matSuffix>https</mat-icon>
+          <input matInput mat-icon placeholder="PASSWORD" type="password" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        
+        <br>
+        <br>
+        <p class="error"> {{ error }} </p>
+        <button mat-button (click)="login()">Login</button>
+        
+      </form>
+      
+      <br>
+      
+      <a [routerLink]="['/signup']">Don't have an account?</a>
+      
+    </div>
+  </div>
+
+</app-main-nav>

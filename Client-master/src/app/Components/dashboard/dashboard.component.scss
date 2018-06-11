@@ -1,0 +1,62 @@
+.rating {
+  color: transparent;
+  direction: rtl;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  
+  &:before,
+  &:after {
+    content: attr(data-star);
+    direction: ltr;
+    font-size: 20px;
+    font-size: 1rem;
+    font-size-adjust: .6125;
+    line-height: 1;
+    pointer-events: none;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  &:before {
+    color: #AAA;
+    color: rgba(0, 0, 128, .1);
+    display: block;
+    text-shadow: -1px 0px 0 rgba(255, 255, 255, .6),1px 1px 0 rgba(0, 0, 0, .6);
+  }
+  
+  &:after {
+    color: #C70;
+    color: rgba(255, 205, 7, 0.94);
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+  }
+  
+  &[data-star="horrible"] {
+    text-transform: uppercase;
+    
+    &:before {
+      color: #D00;
+    }
+  }
+  
+  &[data-star="unrated"] {
+    text-transform: capitalize;
+    
+    &:before {
+      color: #09D;
+    }
+  }
+}
+
+@for $i from 1 through 100 {
+  .rating[data-rating="#{$i}"]:after {
+    width: #{$i}#{'%'};
+  }
+}

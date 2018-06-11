@@ -1,0 +1,173 @@
+<!-- 
+<h1>
+  dashboard works!
+</h1>
+
+<div *ngIf="user">
+  <p>Welcome {{user.firstname}} {{user.lastname}},</p>
+  <p> Current Membership: {{user.membership}} </p>
+  <a [routerLink]="['/search']"><button type="submit">Search</button></a>
+  <a><button type="submit" (click)="logout()">Log Out</button></a>
+</div> -->
+
+<app-main-nav>
+<div class="dash-nav">
+    <div class="dash-info" *ngIf="user">
+      <h1 class="white-font">Welcome {{user.firstname}},</h1>
+      <h2 class="white-font">Membership: {{user.membership}} </h2>
+    </div>
+
+</div>
+  
+
+  
+  <div>
+    <mat-card>
+        <mat-card-content>
+          <mat-tab-group class="demo-tab-group">
+            <mat-tab label="My Info">
+              <div class="demo-tab-content">
+                <div>  
+                  <h3>Name: {{user.firstname}} {{user.lastname}} </h3>
+                  <h3>Email: {{user.email}}</h3>
+                  <h3>Date of Birth: {{user.dob}}</h3>
+                  <h3>Address: {{user.address}}</h3>
+                  <h3>Phone: {{user.phone}}</h3>
+                  <h3>Username: {{user.username}}</h3>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="My Flex">                 
+                <div class="spinner" *ngIf="!isReady">
+                    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+                  </div>
+                  <div *ngIf="isReady">
+              <div class="my-flex">
+
+                  <div class="flex-gym" *ngFor="let gym of gymList">
+
+
+
+                      <!-- {{gym.place_id}} -->
+                      <img class="pic" *ngIf="gym.pic" [src]="gym.pic"  height="150px" width="250px"/>
+                      <img class="pic" *ngIf="!gym.pic" src="../../../assets/images/6-Reasons-You-Should-Never-Open-a-Gym.png"  height="150px" width="250px"/>
+                      <h3><b>{{gym.name}}</b></h3>
+                        <p class="address-width">{{ gym.formatted_address }}</p> 
+                        <p *ngIf="gym.rating"> <span class="rating" attr.data-rating="{{gym.rating}}" data-star="★★★★★"></span>  {{gym.rating / 20}}</p> 
+                        <p *ngIf="!gym.rating">No Reviews</p>
+                        <div *ngFor="let popTimes of gym.busyTimes[0]">
+                          <div *ngIf="isDate(popTimes.day)">
+                            <!-- <h3>{{popTimes.day}}</h3> -->
+                             <!-- <div *ngFor="let time of popTimes.busyInfo[0]"> -->
+                                <h4 class="busy">Busy Times</h4>
+                                <div class="graph-size"> 
+                                  <app-busygraph  [graphSearchResultsHour] = "popTimes.busyInfo" ></app-busygraph>
+                              </div>
+                              <!-- </div> -->
+                            </div>
+                          </div>
+                          <button class="delete" mat-icon mat-button (click)="deleteGym(gym.place_id, user._id)"><mat-icon>delete</mat-icon></button>
+                          <!-- <button (click)="replaceGym(gym.place_id, user._id)">Swap This Gym!</button> -->
+                    </div>
+                    </div>
+              </div>  
+            </mat-tab>
+            <!-- SEARCH TAB -->
+            <mat-tab label="Swap Gyms">
+                <div class="demo-tab-content">
+                  <div class="container-gyms">
+                    <div class="search-contain">
+                        <div>
+                            <form class="search">
+                              
+                              <div>
+                                <mat-form-field>
+                                  <mat-icon matSuffix>location_on</mat-icon>
+                                  <input matInput mat-icon placeholder="Find Your Gym" type="search" [(ngModel)]="resultSearch.searchTerm" name="search" (keyup.enter)= "gymSearch()">
+                                </mat-form-field>
+                                </div>
+
+                              <div>
+                                <button class="search-btn" mat-button type="button" (click)="gymSearch()"><mat-icon matSuffix>search</mat-icon></button>
+                              </div>
+                            </form>
+                          </div> 
+
+                          <div class="info-contain">
+    
+                              <!-- START OF GYM INFO -->
+                              <div class="spinner" *ngIf="!gymReady">
+                                  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+                                </div>
+                                <div *ngIf="gymReady">
+                              <div class="gym-contain">
+                                <div class="single-gym" *ngFor="let gym of mySearch.gymResults">
+                                  <img class="pic" *ngIf="gym.pic" [src]="gym.pic"  height="150px" width="250px"/>
+                                  <img class="pic" *ngIf="!gym.pic" src="../../../assets/images/6-Reasons-You-Should-Never-Open-a-Gym.png"  height="150px" width="250px"/>
+                                  <h4><b>{{ gym.name }}</b></h4> 
+                        
+                                      <p>{{ gym.formatted_address }}</p> 
+                                      <p *ngIf="gym.rating"> <span class="rating" attr.data-rating="{{gym.rating}}" data-star="★★★★★"></span>  {{gym.rating / 20}}</p> 
+                                      <p *ngIf="!gym.rating">No Reviews</p>
+                                          <!-- <p>{{gym.place_id}}</p> -->
+                                    
+                                    <div *ngFor="let popTimes of gym.busyTimes[0]">
+                                      <div *ngIf="isDate(popTimes.day)">
+                                        <!-- <h3>{{popTimes.day}}</h3>  THIS IS THE CURRENT DAY --> 
+                                        <!-- <h4>Current Times</h4> -->
+                                        <div *ngFor="let time of popTimes.busyInfo[0]">
+                                          <ul>
+                                            <!-- <li>during hour:{{time.hour}} is % :{{time.percentage}} , busy</li> -->
+                                          </ul>  
+                                        </div>  
+                                      </div>
+                                    </div>
+                                    <!-- Add Gym Button -->
+
+                                    <button  mat-button mat-icon type="submit" (click)="addGym(gym.place_id, user, gym.name)"><mat-icon>add_circle_outline</mat-icon> </button>
+
+
+                        </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                    </div>
+                    <!-- ########################## END OF SEARCH COLUMN ############################## -->
+                    <div class="map"> 
+                      <app-googlemap [searchResults] = "mySearch.gymResults"></app-googlemap>
+                    </div>
+                    <!-- ########################## END OF MAP COLUMN ############################## -->
+                    <div class="add-gym">
+                     
+                      <div class="new-gyms">
+                        
+                        <h2>New Gyms</h2>
+                      <hr>
+                      <ol>
+                      <div *ngFor="let side of sideGyms">
+                              <li><b>{{side}}</b></li>
+                            </div>
+                          </ol>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <!-- ########################## END OF MY FLEX ############################## -->
+                  
+                </div>
+              </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
+      </mat-card>
+  </div>
+<!-- ******************************************SEARCH CONTENT************************************************************ -->
+
+
+  
+  
+<!-- ******************************************END SEARCH CONTENT************************************************************ -->
+
+
+</app-main-nav>

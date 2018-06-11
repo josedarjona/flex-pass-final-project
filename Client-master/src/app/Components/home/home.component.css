@@ -1,0 +1,101 @@
+.cover {
+  width: 100%;
+  height: 100vh;
+}
+.cover-1 {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.green {
+  background-color: aqua;
+}
+
+.bg-1 {  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.bg-1 h2 {
+  color: #888888;
+  font-size: 72px;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  font-weight: 400;
+  text-align: center;
+}
+
+.bg-1 h3 {
+  color: #888888;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  font-weight: 400;
+  text-align: center;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.cover h1 {
+  color: #888888;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  font-weight: 400;
+  font-size: 60px;
+  text-align: center;
+}
+
+.header-btn {
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.header-btn button {
+  border: 1px solid #888888;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.div-3 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.center-div {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  width: 30vw;
+  align-items: center;
+  box-shadow: 0px 3px 3px rgba(100, 100, 100, 1);
+
+}
+
+.center-div h2 {
+  color: #888888;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  font-weight: 400;
+  font-size: 36px;
+}
+.center-div p {
+  color: #888888;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.pad {
+  padding: 10px;
+}
+
+.bg-2 {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  height: 50vh;
+  width: 100%;
+}
+
+

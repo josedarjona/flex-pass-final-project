@@ -1,0 +1,132 @@
+<app-main-nav>
+  <div class="cover">
+    <div class="signup">
+      <h1> Sign Up </h1>
+      <br>
+      <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+          {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+        </button> -->
+        <mat-horizontal-stepper [linear]="true" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Personal</ng-template>
+              <mat-form-field>
+                <input matInput placeholder="First Name" type="text" [(ngModel)]="formInfo.firstname" name="first" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Last Name" type="text" [(ngModel)]="formInfo.lastname" name="lastname" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <input matInput mat-icon placeholder="Date of Birth" type="text" [(ngModel)]="formInfo.dob" name="dob" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <input matInput mat-icon placeholder="Address" type="text" [(ngModel)]="formInfo.address" name="address" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <input matInput mat-icon placeholder="Email" type="text" [(ngModel)]="formInfo.email" name="email" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <input matInput mat-icon placeholder="Phone" type="text" [(ngModel)]="formInfo.phone" name="phone" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Membership</ng-template>
+              <mat-form-field>
+                  <mat-select name="membership" [(ngModel)]="formInfo.membership" placeholder="Membership" formControlName="secondCtrl" required>
+                      <mat-option>None</mat-option>
+                      <mat-option value="flex1">Flex 1</mat-option>
+                      <mat-option value="flex2">Flex 2</mat-option>
+                      <mat-option value="flex3">Flex 3</mat-option>
+                    </mat-select>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Username/Password</ng-template>
+                <mat-form-field>
+                    <input matInput mat-icon placeholder="Username" type="text" [(ngModel)]="formInfo.username" name="username" formControlName="thirdCtrl" required>
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                      <input matInput mat-icon placeholder="Password" type="password" [(ngModel)]="formInfo.password" name="password" formControlName="thirdCtrl" required>
+                    </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="signup()"> Signup </button>
+                </div>
+              </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+      <!-- <form>
+       
+         
+              <mat-form-field>
+                <!-- <mat-icon matSuffix>rename-box</mat-icon> -->
+             <!--   <input matInput mat-icon placeholder="First Name" type="text" [(ngModel)]="formInfo.firstname" name="first">
+              </mat-form-field>
+            <br>
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Last Name" type="text" [(ngModel)]="formInfo.lastname" name="lastname">
+              </mat-form-field>
+            <br>
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Date of Birth" type="text" [(ngModel)]="formInfo.dob" name="dob">
+              </mat-form-field>
+            <br>
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Address" type="text" [(ngModel)]="formInfo.address" name="address">
+              </mat-form-field>
+            <br>
+         
+           
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Email" type="text" [(ngModel)]="formInfo.email" name="email">
+              </mat-form-field>
+            <br>
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Phone" type="text" [(ngModel)]="formInfo.phone" name="phone">
+              </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-select name="membership" [(ngModel)]="formInfo.membership" placeholder="Membership">
+                  <mat-option>None</mat-option>
+                  <mat-option value="flex1">Flex 1</mat-option>
+                  <mat-option value="flex2">Flex 2</mat-option>
+                  <mat-option value="flex3">Flex 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <br>
+              <mat-form-field>
+                <input matInput mat-icon placeholder="Username" type="text" [(ngModel)]="formInfo.username" name="username">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                  <input matInput mat-icon placeholder="Password" type="password" [(ngModel)]="formInfo.password" name="password">
+                </mat-form-field>
+           
+       
+        <br>
+        <br>
+        <br>
+      <button mat-button (click)="signup()"> Signup </button>
+      </form>
+      <p class="error"> {{ error }} </p> -->
+    
+    </div> 
+  </div>
+</app-main-nav>

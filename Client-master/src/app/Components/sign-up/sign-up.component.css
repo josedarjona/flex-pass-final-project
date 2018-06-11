@@ -1,0 +1,30 @@
+.signup {
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+button {
+  background-color: #21BCE4;
+  width: 200px;
+  color: white;
+  font-weight: 400;
+  font-family: avenir, 'avenir next', helvetica, arial, sans-serif; 
+}
+input {
+  width: 200px;
+}
+
+
